@@ -1,0 +1,77 @@
+@import 'src/styles/variables';
+
+.main {
+    display: flex;
+    align-items: center;
+
+    height: 70dvh;
+    margin-bottom: 100px;
+    padding-left: 150px;
+
+    background-image: url('../../../../assets/img/contacts-image.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    &_wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        width: 60%;
+        height: 35%;
+
+        @media (max-width: 1024px) {
+            width: 80%;
+            height: 40%;
+        }
+
+        @media (max-width: 480px) {
+            width: 100%;
+            height: 60%;
+        }
+    }
+
+    &_title {
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 108px;
+        color: $yellow;
+        text-transform: uppercase;
+
+        @media (max-width: 480px) {
+            font-size: 54px;
+            font-weight: 700;
+            line-height: 76px;
+        }
+    }
+
+    &_text {
+        width: 80%;
+
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 30px;
+        color: $white;
+        text-align: left;
+
+        @media (max-width: 480px) {
+            width: 90%;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 26px;
+        }
+    }
+
+    @media (max-width: 1400px) {
+        padding-left: 70px;
+    }
+
+    @media (max-width: 767px) {
+        padding-left: 20px;
+    }
+
+    @media (max-width: 480px) {
+        padding-left: 10px;
+    }
+}

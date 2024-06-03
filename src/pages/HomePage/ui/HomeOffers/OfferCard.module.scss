@@ -1,0 +1,43 @@
+@import 'src/styles/variables';
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+
+    width: 290px;
+    height: 290px;
+
+    background-color: $white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 4px;
+
+    transition: background-image 0.3s ease;
+
+    &_title {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 36px;
+        color: $yellow;
+        &_hovered {
+            color: $white;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        width: 240px;
+        height: 260px;
+    }
+
+    @media (max-width: 767px) {
+        width: 290px;
+        height: 290px;
+    }
+
+    @media (max-width: 480px) {
+        height: 290px;
+    }
+}

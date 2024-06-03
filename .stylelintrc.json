@@ -1,0 +1,17 @@
+{
+    "extends": ["stylelint-config-standard-scss", "stylelint-config-clean-order"],
+    "plugins": ["stylelint-order", "stylelint-prettier"],
+    "rules": {
+        "prettier/prettier": true,
+        "block-no-empty": true,
+        "scss/dollar-variable-pattern": null,
+        "declaration-block-no-duplicate-properties": true,
+        "custom-property-pattern": null,
+        "scss/at-mixin-pattern": null,
+        "selector-class-pattern": null,
+        "declaration-empty-line-before": null,
+        "no-descending-specificity": null,
+        "media-feature-range-notation": null,
+        "number-max-precision": null
+    }
+}

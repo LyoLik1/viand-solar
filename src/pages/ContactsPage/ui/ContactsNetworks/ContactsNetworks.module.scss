@@ -1,0 +1,25 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 130px;
+}
+
+.title {
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 50.97px;
+
+    @media (max-width: 480px) {
+        font-size: 34px;
+        text-align: center;
+    }
+}
+
+.networks {
+    display: flex;
+    gap: 35px;
+}

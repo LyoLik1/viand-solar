@@ -1,0 +1,18 @@
+@import 'src/styles/variables';
+
+.modal {
+    &_title {
+        margin: 0 10px;
+        font-size: 36px;
+        text-align: center;
+    }
+
+    &_img {
+        margin-bottom: 20px;
+
+        @media (max-width: 767px) {
+            width: 250px;
+            height: 250px;
+        }
+    }
+}

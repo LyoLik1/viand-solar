@@ -1,0 +1,34 @@
+@import 'src/styles/variables';
+
+.textStyles {
+    font-family: 'Quattrocento Sans' !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 21px !important;
+}
+* {
+    &.MuiFormControlLabel-label {
+        font-family: 'Quattrocento Sans' !important;
+        font-size: 14px !important;
+    }
+}
+
+.checkboxStyles {
+    color: $yellow !important;
+
+    &:hover {
+        background-color: transparent !important;
+    }
+
+    &.Mui-checked {
+        color: $yellow !important;
+        background-color: transparent !important;
+    }
+}
+
+.errorStyles {
+    font-family: 'Quattrocento Sans' !important;
+    font-size: 14px !important;
+    line-height: 16px !important;
+    margin-bottom: 10px !important;
+}

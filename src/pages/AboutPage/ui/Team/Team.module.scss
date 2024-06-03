@@ -1,0 +1,65 @@
+@import 'src/styles/variables';
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    padding: 100px;
+
+    &_title {
+        margin-bottom: 0;
+
+        font-size: 46px;
+        font-weight: 700;
+        line-height: 59.8px;
+        text-align: center;
+    }
+
+    &_subtitle {
+        margin-bottom: 50px;
+
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27px;
+        color: $grey;
+        text-align: center;
+    }
+
+    @media (max-width: 1024px) {
+        padding: 100px 50px;
+    }
+
+    @media (max-width: 767px) {
+        padding: 100px 20px;
+    }
+}
+
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.member {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+    &_name {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+    }
+
+    &_position {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25.6px;
+        color: $grey;
+    }
+}
