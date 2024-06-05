@@ -15,6 +15,10 @@ const menuItems = [
         link: `${ROUTES.HOME}`
     },
     {
+        name: 'Heim',
+        link: `${ROUTES.HOME}`
+    },
+    {
         name: 'Über uns',
         link: `${ROUTES.ABOUT}`
     },
