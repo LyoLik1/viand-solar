@@ -4,6 +4,7 @@ import { FieldError } from 'react-hook-form'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import styles from './MaskInput.module.scss'
+import classNames from 'classnames'
 
 interface InputOutlinedProps {
     label: string
@@ -33,7 +34,7 @@ export const MaskInput: FC<InputOutlinedProps> = ({ label, onInput, error }) => 
     return (
         <FormControl fullWidth error={!!error}>
             {!isFocused && value === '' ? (
-                <input type='text' placeholder={label} className={styles.placeholderInput} onFocus={handleFocus} />
+                <input type='text' placeholder={label} className={classNames(styles.placeholderInput, error ? styles.errorInput : '')} onFocus={handleFocus} />
             ) : (
                 <PhoneInput
                     country={'de'}

@@ -1,5 +1,6 @@
 import { FC, ReactNode } from 'react'
 import { Button as ButtonMui } from '@mui/material'
+import classNames from 'classnames'
 import styles from './Button.module.scss'
 
 interface ButtonProps {
@@ -30,7 +31,7 @@ export const Button: FC<ButtonProps> = ({ type = 'button', width = 'medium', chi
         <ButtonMui
             type={type}
             onClick={onClick}
-            className={`${buttonStyles[typeButton]} ${buttonWidth[width]}`}
+            className={classNames(buttonStyles[typeButton], buttonWidth[width])}
             sx={{
                 padding: width < '50px' ? '10px 0' : '10px'
             }}

@@ -33,6 +33,7 @@ export const TextField: FC<TextFieldProps> = ({ label, type, onInput, error }) =
                     className: styles.textStyles
                 }}
                 classes={{ root: styles.inputRoot }}
+                sx={{ border: error ? '1px solid #d32f2f' : '' }}
             />
             {error && <FormHelperText className={styles.errorStyles}>{error.message}</FormHelperText>}
         </FormControl>

@@ -12,11 +12,11 @@ const networks = [
     },
     {
         image: <Twitter width='50px' height='50px' />,
-        link: 'https://www.facebook.com/'
+        link: 'https://x.com/'
     },
     {
         image: <WhatsApp width='50px' height='50px' />,
-        link: 'https://www.facebook.com/'
+        link: 'https://www.whatsapp.com/'
     }
 ]
 

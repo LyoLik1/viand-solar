@@ -1,4 +1,5 @@
 import { FC, useEffect, useRef } from 'react'
+import classNames from 'classnames'
 import { gsap } from 'gsap'
 import styles from './Facts.module.scss'
 
@@ -98,7 +99,7 @@ export const Facts: FC = () => {
             <h3 className={styles.title}>Some facts and figures</h3>
             <div className={styles.facts} ref={factsRef}>
                 {facts.map((fact, index) => (
-                    <div className={`${styles.fact} fact`} key={fact.text} data-index={index}>
+                    <div className={classNames(styles.fact, 'fact')} key={fact.text} data-index={index}>
                         <svg width='148' height='148' viewBox='0 0 148 148' fill='none' xmlns='http://www.w3.org/2000/svg'>
                             <circle cx='74' cy='74' r='71' stroke={fact.color} opacity={0.3} strokeWidth='6' />
                             <circle
@@ -116,7 +117,7 @@ export const Facts: FC = () => {
                                 }}
                             />
                         </svg>
-                        <span className={`${styles.fact_count} fact_number_${index}`}>0</span>
+                        <span className={classNames(styles.fact_count, `fact_number_${index}`)}>0</span>
                         <p className={styles.fact_text}>{fact.text}</p>
                     </div>
                 ))}

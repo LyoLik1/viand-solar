@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import classNames from 'classnames'
 import Img from '../../../../assets/img/card1-bg.png'
 import { Button } from '../../../../components/ui/Button/Button'
 import { useDevice } from '../../../../hooks/useDevice'
@@ -29,7 +30,7 @@ export const Offers: FC = () => {
                         )}
                     </div>
                 </div>
-                <div className={`${styles.offers_item} ${isMobile ? '' : styles.offers_item_reverse}`} id='offer-2'>
+                <div className={classNames(styles.offers_item, isMobile ? '' : styles.offers_item_reverse)} id='offer-2'>
                     {isMobile ? (
                         <Button onClick={() => {}} typeButton='transparentBg' width='medium'>
                             mehr erfahren

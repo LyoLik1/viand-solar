@@ -1,4 +1,5 @@
 import { FC, ReactNode, useState } from 'react'
+import classNames from 'classnames'
 import { HashLink as Link } from 'react-router-hash-link'
 import CloseImg from '../../../assets/svg/close.svg'
 import MenuImg from '../../../assets/svg/menu.svg'
@@ -31,7 +32,7 @@ export const HeaderMobile: FC<HeaderMobileProps> = ({ menyItems }) => {
                         <img src={MenuImg} alt='Menu img' />
                     </Button>
                 </div>
-                <div className={`${styles.nav_links} ${toggleMenu ? styles.nav_links_active : ''}`}>
+                <div className={classNames(styles.nav_links, toggleMenu ? styles.nav_links_active : '')}>
                     <div className={styles.nav_links_wrapper}>
                         <div className={styles.nav_button_close}>
                             <Button onClick={toggleMenuHandler} typeButton='transparent' width='small'>

@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import classNames from 'classnames'
 import { useLocation } from 'react-router-dom'
 import { HashLink as Link } from 'react-router-hash-link'
 import ChatImg from '../../assets/svg/chat.svg'
@@ -36,7 +37,7 @@ export const Header: FC = () => {
     const location = useLocation()
     const { isDesktop } = useDevice()
     return (
-        <header className={`${styles.header} ${location.pathname === ROUTES.OFFERS ? styles.header_transparent : ''}`}>
+        <header className={classNames(styles.header, location.pathname === ROUTES.OFFERS ? styles.header_transparent : '')}>
             {isDesktop ? (
                 <div className={styles.header_wrapper}>
                     <nav>

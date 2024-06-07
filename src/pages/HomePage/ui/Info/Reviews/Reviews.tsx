@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules'
+import classNames from 'classnames'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Img from '../../../../../assets/img/card1-bg.png'
 import ArrowLeft from '../../../../../assets/svg/arrow-left.svg'
@@ -13,7 +14,7 @@ export const Reviews: FC = () => {
     const pagination = {
         clickable: true,
         renderBullet: function (_index: number, className: string) {
-            return `<span class="${styles.swiperPaginationBullet} ${className}"></span>`
+            return `<span class="${classNames(styles.swiperPaginationBullet, className)}"></span>`
         }
     }
 
@@ -32,11 +33,11 @@ export const Reviews: FC = () => {
                 modules={[Navigation, Pagination, Mousewheel, Keyboard]}
                 className={styles.slider}
             >
-                <div className={`${styles.swiperButton} swiper-button-prev`}>
+                <div className={classNames(styles.swiperButton, 'swiper-button-prev')}>
                     <img src={ArrowLeft} alt='Arrow Previous' />
                 </div>
 
-                <div className={`${styles.swiperButton} swiper-button-next`}>
+                <div className={classNames(styles.swiperButton, 'swiper-button-next')}>
                     <img src={ArrowRight} alt='Arrow Next' />
                 </div>
                 <SwiperSlide>
