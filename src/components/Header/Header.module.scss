@@ -13,12 +13,13 @@
     padding: 0 150px;
 
     background-color: $white;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
 
     &_wrapper {
-        height: inherit;
         display: flex;
         justify-content: space-between;
         width: 100%;
+        height: inherit;
 
         @media (max-width: 767px) {
             display: none;
@@ -35,26 +36,31 @@
 }
 
 .nav {
-    height: 70px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     width: 350px;
+    height: 70px;
 
     &_link {
-        font-size: 16px;
-        line-height: 17.73px;
-        width: 90px;
-        height: inherit;
         display: flex;
         align-items: center;
         justify-content: center;
+
+        width: 90px;
+        height: inherit;
+
+        font-size: 16px;
+        line-height: 17.73px;
+
         &_wrapper {
-            height: 100%;
             display: flex;
             align-items: center;
-            width: 90px;
             justify-content: center;
+
+            width: 90px;
+            height: 100%;
         }
     }
 
@@ -74,6 +80,10 @@
 .email {
     display: flex;
     gap: 15px;
+    &:hover {
+        transition: all 0.3s;
+        color: $yellow;
+    }
 
     &_info {
         display: flex;

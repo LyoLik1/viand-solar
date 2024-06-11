@@ -1,10 +1,10 @@
 import { FC, useState } from 'react'
 import { FormControl, FormHelperText } from '@mui/material'
+import classNames from 'classnames'
 import { FieldError } from 'react-hook-form'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import styles from './MaskInput.module.scss'
-import classNames from 'classnames'
 
 interface InputOutlinedProps {
     label: string
@@ -18,12 +18,7 @@ export const MaskInput: FC<InputOutlinedProps> = ({ label, onInput, error }) => 
 
     const handleFocus = () => {
         setIsFocused(true)
-    }
-
-    const handleBlur = () => {
-        if (value === '') {
-            setIsFocused(false)
-        }
+        console.log('dfsfddfs')
     }
 
     const handleInput = (value: string) => {
@@ -33,24 +28,20 @@ export const MaskInput: FC<InputOutlinedProps> = ({ label, onInput, error }) => 
 
     return (
         <FormControl fullWidth error={!!error}>
-            {!isFocused && value === '' ? (
-                <input type='text' placeholder={label} className={classNames(styles.placeholderInput, error ? styles.errorInput : '')} onFocus={handleFocus} />
-            ) : (
-                <PhoneInput
-                    country={'de'}
-                    value={value}
-                    onChange={handleInput}
-                    onFocus={handleFocus}
-                    onBlur={handleBlur}
-                    inputProps={{
-                        autoFocus: true,
-                        name: 'phone',
-                        required: true,
-                        className: styles.phoneInput
-                    }}
-                    dropdownClass={styles.dropdown}
-                />
-            )}
+            <PhoneInput
+                country={isFocused ? 'de' : ''}
+                placeholder={label}
+                value={value}
+                onChange={handleInput}
+                onFocus={handleFocus}
+                inputProps={{
+                    name: 'phone',
+                    required: true,
+                    className: classNames(styles.phoneInput, !isFocused && styles.phoneInput_unfocused)
+                }}
+                dropdownClass={classNames(styles.dropdown)}
+                buttonClass={isFocused || value.length > 0 ? '' : styles.btn}
+            />
             {error && <FormHelperText className={styles.errorStyles}>{error.message}</FormHelperText>}
         </FormControl>
     )

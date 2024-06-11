@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import Form from '../Form/Form'
-import styles from './Form.module.scss'
+import styles from './FormBg.module.scss'
 
 export const FormBg: FC = () => {
     return (

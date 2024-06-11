@@ -14,14 +14,16 @@
         display: flex;
         flex-direction: column;
         gap: 50px;
+
         height: 100%;
         margin-bottom: 70px;
     }
+
     &_item {
-        padding-top: 120px;
         display: flex;
         gap: 50px;
         height: 550px;
+        padding-top: 120px;
 
         &_reverse {
             flex-direction: row-reverse;

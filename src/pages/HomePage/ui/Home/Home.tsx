@@ -20,7 +20,7 @@ export const Home: FC = () => {
                     <Button onClick={() => navigator(ROUTES.OFFERS)} width={isTablet || isMobile ? 'full' : 'half'} typeButton='transparent'>
                         zu unseren angeboten
                     </Button>
-                    <Button onClick={() => {}} width={isTablet || isMobile ? 'full' : 'half'}>
+                    <Button onClick={() => navigator(ROUTES.ABOUT)} width={isTablet || isMobile ? 'full' : 'half'}>
                         Mehr über uns erfahren
                     </Button>
                 </div>

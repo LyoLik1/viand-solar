@@ -1,8 +1,6 @@
-import { FC, useState } from 'react'
-import { yupResolver } from '@hookform/resolvers/yup'
+import { FC } from 'react'
 import classNames from 'classnames'
-import { Controller, useForm } from 'react-hook-form'
-import * as yup from 'yup'
+import { Controller } from 'react-hook-form'
 import { Button } from '../ui/Button/Button'
 import { Checkbox } from '../ui/Checkbox/Checkbox'
 import { InputOutlined } from '../ui/Input/InputOutlined'
@@ -10,72 +8,14 @@ import { MaskInput } from '../ui/MaskInput/MaskInput'
 import { TextField } from '../ui/TextField/TextField'
 import styles from './Form.module.scss'
 import { Modal } from './Modal/Modal'
-
-const schema = yup.object().shape({
-    firstName: yup
-        .string()
-        .required('This field is required')
-        .matches(/^[a-zA-Z\s]*$/, 'Invalid name'),
-    lastName: yup
-        .string()
-        .required('This field is required')
-        .matches(/^[a-zA-Z\s]*$/, 'Invalid name'),
-    phoneNumber: yup.string().required('This field is required'),
-    email: yup
-        .string()
-        .required('This field is required')
-        .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 'Invalid email address'),
-    message: yup.string().required('This field is required'),
-    checkbox: yup.boolean().oneOf([true], 'You must accept the terms and conditions')
-})
+import { useForms } from './useForms'
 
 interface FormProps {
     headline?: boolean
 }
-interface FormData {
-    firstName: string
-    lastName: string
-    phoneNumber: string
-    email: string
-    message: string
-    checkbox?: boolean
-}
 
 const Form: FC<FormProps> = ({ headline = true }) => {
-    const {
-        setValue,
-        handleSubmit,
-        control,
-        formState: { errors }
-    } = useForm({
-        resolver: yupResolver(schema),
-        defaultValues: {
-            checkbox: false
-        }
-    })
-    const [checked, setChecked] = useState(false)
-    const [isModalOpen, setIsModalOpen] = useState(false)
-
-    const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setChecked(event.target.checked)
-    }
-
-    const toggleModalHandler = () => {
-        setIsModalOpen(!isModalOpen)
-    }
-
-    const onSubmit = async (data: FormData) => {
-        try {
-            toggleModalHandler()
-            const { checkbox, ...sortedData } = data
-
-            if (checkbox) {
-                console.log(sortedData)
-            }
-        } catch (error) {
-            // console.log(error)
-        }
-    }
+    const { setValue, handleSubmit, control, errors, checked, isModalOpen, handleCheckboxChange, toggleModalHandler, onSubmit } = useForms()
 
     return (
         <>

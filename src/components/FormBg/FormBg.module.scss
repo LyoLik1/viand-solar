@@ -1,0 +1,47 @@
+@import 'src/styles/variables';
+
+.main {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 70%;
+    min-height: 800px;
+
+    background-image: url('../../assets/img/footer-image.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    &_wrapper {
+        z-index: 1;
+
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+        width: 100%;
+        height: 100%;
+        padding: 0 20% 0 0;
+
+        @media (max-width: 1400px) {
+            padding: 0 10% 0 0;
+        }
+
+        @media (max-width: 767px) {
+            padding: 25px 0;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        min-height: 600px;
+    }
+
+    @media (max-width: 767px) {
+        min-height: 450px;
+    }
+
+    @media (max-width: 480px) {
+        min-height: 350px;
+    }
+}

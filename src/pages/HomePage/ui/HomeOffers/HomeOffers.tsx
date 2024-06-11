@@ -1,5 +1,6 @@
 import { FC, ReactNode, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { HashLink as Link } from 'react-router-hash-link'
 import Card1BgImage from '../../../../assets/img/card1-bg.png'
 import { Button } from '../../../../components/ui/Button/Button'
 import { Build } from '../../../../components/ui/icons/Build'
@@ -14,6 +15,7 @@ interface OfferProps {
     image: ReactNode
     title: string
     bgImage: string
+    link: string
 }
 
 export const HomeOffers: FC = () => {
@@ -33,17 +35,20 @@ export const HomeOffers: FC = () => {
         {
             image: <Build color={hoveredIndex === 0 ? '#FFFFFF' : '#FCD400'} />,
             title: 'Lorem ipsum',
-            bgImage: Card1BgImage
+            bgImage: Card1BgImage,
+            link: `${ROUTES.OFFERS}#offer-1`
         },
         {
             image: <Paint color={hoveredIndex === 1 ? '#FFFFFF' : '#FCD400'} />,
             title: 'Lorem ipsum',
-            bgImage: Card1BgImage
+            bgImage: Card1BgImage,
+            link: `${ROUTES.OFFERS}#offer-2`
         },
         {
             image: <Installation color={hoveredIndex === 2 ? '#FFFFFF' : '#FCD400'} />,
             title: 'Lorem ipsum',
-            bgImage: Card1BgImage
+            bgImage: Card1BgImage,
+            link: `${ROUTES.OFFERS}#offer-3`
         }
     ]
 
@@ -53,9 +58,9 @@ export const HomeOffers: FC = () => {
             <p className={styles.main_text}>Lorem ipsum dolor sit amet consectetur.</p>
             <div className={styles.offers}>
                 {offers.map((offer, index) => (
-                    <div key={index} onClick={() => navigator(ROUTES.OFFERS)} onMouseEnter={() => handleMouseEnter(index)} onMouseLeave={handleMouseLeave} className={styles.offers_offer}>
+                    <Link key={index} to={offer.link} onMouseEnter={() => handleMouseEnter(index)} onMouseLeave={handleMouseLeave} className={styles.offers_offer}>
                         <OfferCard title={offer.title} img={offer.image} backgroundImage={offer.bgImage} isHovered={hoveredIndex === index} />
-                    </div>
+                    </Link>
                 ))}
             </div>
             <div className={styles.main_info}>
