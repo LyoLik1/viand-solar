@@ -54,7 +54,7 @@ export const HomeOffers: FC = () => {
 
     return (
         <section className={styles.main}>
-            <h2 className={styles.main_title}>Unsere Angebote</h2>
+            <h3 className={styles.main_title}>Unsere Angebote</h3>
             <p className={styles.main_text}>Lorem ipsum dolor sit amet consectetur.</p>
             <div className={styles.offers}>
                 {offers.map((offer, index) => (

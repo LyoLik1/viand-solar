@@ -48,7 +48,7 @@ const team = [
 export const Team: FC = () => {
     return (
         <section className={styles.main}>
-            <h3 className={styles.main_title}>Unser Team</h3>
+            <p className={styles.main_title}>Unser Team</p>
             <p className={styles.main_subtitle}>Lorem ipsum dolor sit amet consectetur.</p>
             <div className={styles.team}>
                 {team.map((member) => (
