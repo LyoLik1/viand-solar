@@ -36,10 +36,10 @@ export const MaskInput: FC<InputOutlinedProps> = ({ label, onInput, error }) => 
                 inputProps={{
                     name: 'phone',
                     required: true,
-                    className: classNames(styles.phoneInput, !isFocused && styles.phoneInput_unfocused)
+                    className: classNames(styles.phoneInput, !isFocused && styles.phoneInput_unfocused, error && styles.error)
                 }}
                 dropdownClass={classNames(styles.dropdown)}
-                buttonClass={isFocused || value.length > 0 ? '' : styles.btn}
+                buttonClass={classNames(isFocused || value.length > 0 ? '' : styles.btn, error && styles.error)}
             />
             {error && <FormHelperText className={styles.errorStyles}>{error.message}</FormHelperText>}
         </FormControl>

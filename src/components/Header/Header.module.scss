@@ -80,9 +80,10 @@
 .email {
     display: flex;
     gap: 15px;
+
     &:hover {
-        transition: all 0.3s;
         color: $yellow;
+        transition: all 0.3s;
     }
 
     &_info {

@@ -21,14 +21,15 @@
 
 .phoneInput {
     z-index: 10;
-    font-family: 'Quattrocento Sans' !important;
-    letter-spacing: 0.3px !important;
-    font-weight: 400 !important;
+
     width: 100%;
     padding: 16.5px 10px;
     padding-left: 50px;
 
+    font-family: 'Quattrocento Sans' !important;
     font-size: 16px;
+    font-weight: 400 !important;
+    letter-spacing: 0.3px !important;
 
     background-color: #f3f3f3;
     border: 1.5px solid #ccc;
@@ -37,6 +38,7 @@
     &_unfocused {
         padding-left: 10px;
     }
+
     &:hover {
         border: 1.5px solid $black;
     }
@@ -54,6 +56,10 @@
             background-color: #ececec;
         }
     }
+}
+
+.error {
+    border: 1px solid #d32f2f !important;
 }
 
 .btn {
