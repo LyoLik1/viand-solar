@@ -38,40 +38,45 @@ export const Facts: FC = () => {
     const factsRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
+        const animateCircle = (circle: SVGCircleElement, factValue: number, endValue: number, index: number) => {
+            const radius = circle.r.baseVal.value
+            const circumference = 2 * Math.PI * radius
+
+            circle.style.strokeDasharray = `${circumference}`
+            circle.style.strokeDashoffset = `${circumference}`
+
+            gsap.to(circle, {
+                strokeDashoffset: circumference - (circumference * factValue) / endValue,
+                duration: 2.5,
+                ease: 'linear'
+            })
+
+            gsap.to(`.fact_number_${index}`, {
+                innerText: '0',
+                duration: 0.1,
+                onComplete: () => {
+                    gsap.to(`.fact_number_${index}`, {
+                        innerText: factValue + (facts[index].number.includes('%') ? '%' : ''),
+                        duration: 2.5,
+                        roundProps: 'innerText',
+                        ease: 'linear',
+                        snap: { innerText: 1 }
+                    })
+                }
+            })
+        }
+
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         const index = entry.target.getAttribute('data-index')
                         if (index !== null) {
-                            const factValue = facts[parseInt(index)].value
-                            const endValue = facts[parseInt(index)].endValue
-                            const circle = document.querySelector(`.circle_${index}`) as SVGCircleElement
-                            const radius = circle.r.baseVal.value
-                            const circumference = 2 * Math.PI * radius
-
-                            circle.style.strokeDasharray = `${circumference}`
-                            circle.style.strokeDashoffset = `${circumference}`
-
-                            gsap.to(circle, {
-                                strokeDashoffset: circumference - (circumference * factValue) / endValue,
-                                duration: 2.5,
-                                ease: 'linear'
-                            })
-
-                            gsap.to(`.fact_number_${index}`, {
-                                innerText: '0',
-                                duration: 0.1,
-                                onComplete: () => {
-                                    gsap.to(`.fact_number_${index}`, {
-                                        innerText: factValue + (facts[parseInt(index)].number.includes('%') ? '%' : ''),
-                                        duration: 2.5,
-                                        roundProps: 'innerText',
-                                        ease: 'linear',
-                                        snap: { innerText: 1 }
-                                    })
-                                }
-                            })
+                            const fact = facts[parseInt(index)]
+                            const circle = entry.target.querySelector(`.circle_${index}`) as SVGCircleElement
+                            if (circle) {
+                                animateCircle(circle, fact.value, fact.endValue, parseInt(index))
+                            }
                         }
                     }
                 })
@@ -79,18 +84,11 @@ export const Facts: FC = () => {
             { threshold: 0.5 }
         )
 
-        if (factsRef.current) {
-            factsRef.current.querySelectorAll('.fact').forEach((fact) => {
-                observer.observe(fact)
-            })
-        }
+        const factsElements = factsRef.current?.querySelectorAll('.fact') || []
+        factsElements.forEach((fact) => observer.observe(fact))
 
         return () => {
-            if (factsRef.current) {
-                factsRef?.current?.querySelectorAll('.fact').forEach((fact) => {
-                    observer.unobserve(fact)
-                })
-            }
+            factsElements.forEach((fact) => observer.unobserve(fact))
         }
     }, [])
 

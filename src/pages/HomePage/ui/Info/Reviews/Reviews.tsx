@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules'
+import { Navigation, Pagination, Mousewheel, Keyboard, Autoplay } from 'swiper/modules'
 import classNames from 'classnames'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Img from '../../../../../assets/img/card1-bg.png'
@@ -30,7 +30,11 @@ export const Reviews: FC = () => {
                 }}
                 pagination={pagination}
                 keyboard={true}
-                modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+                autoplay={{
+                    delay: 8000,
+                    disableOnInteraction: false
+                }}
+                modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
                 className={styles.slider}
             >
                 <div className={classNames(styles.swiperButton, 'swiper-button-prev')}>

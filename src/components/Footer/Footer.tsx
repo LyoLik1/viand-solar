@@ -1,11 +1,17 @@
-import { FC } from 'react'
-import ArrowUpImg from '../../assets/svg/arrow-up.svg'
+import { FC, useState } from 'react'
 import { Button } from '../ui/Button/Button'
-import styles from './Footer.module.scss'
+import { Arrow } from '../ui/icons/Arrow'
 import { FooterBottom } from './ui/FooterBottom/FooterBottom'
 import { FooterTop } from './ui/FooterTop/FooterTop'
+import styles from './Footer.module.scss'
 
 export const Footer: FC = () => {
+    const [isHover, setIsHover] = useState(false)
+
+    const toggleHover = () => {
+        setIsHover(!isHover)
+    }
+
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -19,9 +25,9 @@ export const Footer: FC = () => {
                 <FooterTop />
                 <FooterBottom />
             </div>
-            <div className={styles.button}>
-                <Button onClick={scrollToTop} width='smallest'>
-                    <img src={ArrowUpImg} alt='arrow up button' />
+            <div className={styles.button_wrapper} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+                <Button className={styles.button} onClick={scrollToTop} width='small'>
+                    <Arrow color={isHover ? 'black' : 'white'} />
                 </Button>
             </div>
         </footer>

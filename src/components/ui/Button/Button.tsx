@@ -11,9 +11,10 @@ interface ButtonProps {
     width?: 'smallest' | 'small' | 'medium' | 'half' | 'large' | 'full'
     typeButton?: 'yellow' | 'transparent' | 'transparentBg'
     disable?: boolean
+    className?: string
 }
 
-export const Button: FC<ButtonProps> = ({ type = 'button', width = 'medium', children, onClick, typeButton = 'yellow', disable = false }) => {
+export const Button: FC<ButtonProps> = ({ type = 'button', width = 'medium', className, children, onClick, typeButton = 'yellow', disable = false }) => {
     const buttonStyles = {
         yellow: styles.yellow,
         transparent: styles.transparent,
@@ -31,7 +32,7 @@ export const Button: FC<ButtonProps> = ({ type = 'button', width = 'medium', chi
         <ButtonMui
             type={type}
             onClick={onClick}
-            className={classNames(buttonStyles[typeButton], buttonWidth[width])}
+            className={classNames(buttonStyles[typeButton], buttonWidth[width], className)}
             sx={{
                 padding: width < '50px' ? '10px 0' : '10px'
             }}

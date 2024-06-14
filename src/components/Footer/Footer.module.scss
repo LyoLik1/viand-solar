@@ -47,18 +47,24 @@
 }
 
 .button {
-    align-self: flex-end;
-    width: 40px;
-    height: 40px;
-
-    @media (max-width: 767px) {
-        position: absolute;
-        right: 15%;
-        bottom: 30px;
+    &:hover {
+        &_arrow {
+            color: black !important;
+        }
     }
+    &_wrapper {
+        align-self: flex-end;
+        width: 64px;
+        height: 44px;
 
-    @media (max-width: 480px) {
-        right: 10%;
-        bottom: 20px;
+        @media (max-width: 767px) {
+            position: absolute;
+            right: 15%;
+            bottom: 30px;
+        }
+        @media (max-width: 480px) {
+            right: 10%;
+            bottom: 20px;
+        }
     }
 }

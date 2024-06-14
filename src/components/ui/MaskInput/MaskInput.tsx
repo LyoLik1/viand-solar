@@ -18,7 +18,6 @@ export const MaskInput: FC<InputOutlinedProps> = ({ label, onInput, error }) => 
 
     const handleFocus = () => {
         setIsFocused(true)
-        console.log('dfsfddfs')
     }
 
     const handleInput = (value: string) => {
