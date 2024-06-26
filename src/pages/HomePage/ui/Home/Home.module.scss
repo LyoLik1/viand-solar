@@ -33,19 +33,7 @@
     height: 80%;
 
     color: $white;
-    @media (max-width: 1024px) {
-        width: 70%;
-    }
-    @media (max-width: 767px) {
-        width: 70%;
-    }
 
-    @media (max-width: 480px) {
-        width: 90%;
-        height: fit-content;
-        padding-left: 10px;
-        gap: 40px;
-    }
     &_img {
         width: 300px;
         height: 300px;
@@ -62,6 +50,7 @@
         font-size: 20px;
         font-weight: 400;
         line-height: 28px;
+
         @media (max-width: 767px) {
             font-size: 16px;
             font-weight: 400;
@@ -76,5 +65,20 @@
         @media (max-width: 767px) {
             flex-direction: column;
         }
+    }
+
+    @media (max-width: 1024px) {
+        width: 70%;
+    }
+
+    @media (max-width: 767px) {
+        width: 70%;
+    }
+
+    @media (max-width: 480px) {
+        gap: 40px;
+        width: 90%;
+        height: fit-content;
+        padding-left: 10px;
     }
 }

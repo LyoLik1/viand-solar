@@ -15,12 +15,14 @@
         font-weight: 700;
         line-height: 59.8px;
     }
+
     &_text {
         margin-top: 15px;
-        color: $grey;
+
         font-size: 18px;
         font-weight: 400;
         line-height: 27px;
+        color: $grey;
         text-align: center;
     }
 }
