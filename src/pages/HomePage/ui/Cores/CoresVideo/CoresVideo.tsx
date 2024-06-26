@@ -6,7 +6,7 @@ export const CoresVideo: FC = () => {
     return (
         <div className={styles.main}>
             <h1 className={styles.main_title}>Wir sind Viand Solar</h1>
-            <p className={styles.main_text}>Lorem ipsum dolor sit amet consectetur.</p>
+            <p className={styles.main_text}>Erfahren Sie mehr über unser Team.</p>
             <img src={VideoImg} className={styles.main_img} alt='video' />
         </div>
     )

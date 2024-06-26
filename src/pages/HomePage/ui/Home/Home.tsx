@@ -14,7 +14,8 @@ export const Home: FC = () => {
             <div className={styles.info}>
                 <img className={styles.info_img} src={LogoImg} alt='Logo Viand Solar' />
                 <p className={styles.info_text}>
-                    Lorem ipsum dolor sit amet consectetur. Eu amet nibh purus porta in at est. Ac massa tristique in at. Orci eu integer vel senectus maecenas pulvinar augue venenatistyles. Sed et est vitae lobortis magna fusce convallis amet.
+                    Bei Viand Solar sind wir darauf spezialisiert, nachhaltige und effiziente Solarenergielösungen anzubieten, die auf Ihre individuellen Bedürfnisse zugeschnitten sind. Unsere hochmodernen Solarmodule und professionellen
+                    Installationsdienste helfen Ihnen, Energiekosten zu sparen und gleichzeitig Ihren CO2-Fußabdruck zu reduzieren.
                 </p>
                 <div className={styles.info_buttons}>
                     <Button onClick={() => navigator(ROUTES.OFFERS)} width={isTablet || isMobile ? 'full' : 'half'} typeButton='transparent'>

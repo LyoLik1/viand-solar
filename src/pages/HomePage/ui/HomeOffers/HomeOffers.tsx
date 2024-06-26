@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom'
 import { HashLink as Link } from 'react-router-hash-link'
 import Card1BgImage from '../../../../assets/img/card1-bg.png'
 import { Button } from '../../../../components/ui/Button/Button'
-import { Build } from '../../../../components/ui/icons/Build'
+import { Service } from '../../../../components/ui/icons/Service'
 import { Installation } from '../../../../components/ui/icons/Installation'
-import { Paint } from '../../../../components/ui/icons/Paint'
+import { Planing } from '../../../../components/ui/icons/Planing'
 import { useDevice } from '../../../../hooks/useDevice'
 import { ROUTES } from '../../../../Routes'
 import styles from './HomeOffers.module.scss'
@@ -33,20 +33,20 @@ export const HomeOffers: FC = () => {
 
     const offers: OfferProps[] = [
         {
-            image: <Build color={hoveredIndex === 0 ? '#FFFFFF' : '#FCD400'} />,
-            title: 'Lorem ipsum',
+            image: <Planing color={hoveredIndex === 0 ? '#FFFFFF' : '#FCD400'} />,
+            title: 'Beratung und Planung',
             bgImage: Card1BgImage,
             link: `${ROUTES.OFFERS}#offer-1`
         },
         {
-            image: <Paint color={hoveredIndex === 1 ? '#FFFFFF' : '#FCD400'} />,
-            title: 'Lorem ipsum',
+            image: <Installation color={hoveredIndex === 1 ? '#FFFFFF' : '#FCD400'} />,
+            title: 'Installation',
             bgImage: Card1BgImage,
             link: `${ROUTES.OFFERS}#offer-2`
         },
         {
-            image: <Installation color={hoveredIndex === 2 ? '#FFFFFF' : '#FCD400'} />,
-            title: 'Lorem ipsum',
+            image: <Service color={hoveredIndex === 2 ? '#FFFFFF' : '#FCD400'} />,
+            title: 'Wartung und Support',
             bgImage: Card1BgImage,
             link: `${ROUTES.OFFERS}#offer-3`
         }
@@ -54,8 +54,8 @@ export const HomeOffers: FC = () => {
 
     return (
         <section className={styles.main}>
-            <h3 className={styles.main_title}>Unsere Angebote</h3>
-            <p className={styles.main_text}>Lorem ipsum dolor sit amet consectetur.</p>
+            <h3 className={styles.main_title}>Unsere Dienstleistungen</h3>
+            <p className={styles.main_text}>Wir bieten professionellen Service in den folgenden Aspekten an.</p>
             <div className={styles.offers}>
                 {offers.map((offer, index) => (
                     <Link key={index} to={offer.link} onMouseEnter={() => handleMouseEnter(index)} onMouseLeave={handleMouseLeave} className={styles.offers_offer}>
@@ -64,9 +64,9 @@ export const HomeOffers: FC = () => {
                 ))}
             </div>
             <div className={styles.main_info}>
-                <span className={styles.main_info_text}>Erfahren Sie mehr über unsere Angebote</span>
+                <span className={styles.main_info_text}>Erfahren Sie mehr über unsere Leistungen</span>
                 <Button onClick={() => navigator(ROUTES.OFFERS)} width={isDesktop ? 'large' : 'medium'}>
-                    angebote anzeigen
+                    Leistungen anzeigen
                 </Button>
             </div>
         </section>

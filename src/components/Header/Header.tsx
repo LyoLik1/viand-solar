@@ -24,7 +24,7 @@ const menuItems = [
         link: `${ROUTES.ABOUT}`
     },
     {
-        name: 'Angebote',
+        name: 'Leistungen',
         link: `${ROUTES.OFFERS}`
     },
     {

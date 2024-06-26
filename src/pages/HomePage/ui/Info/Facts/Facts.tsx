@@ -1,6 +1,6 @@
-import { FC, useEffect, useRef } from 'react'
+import { FC } from 'react'
 import classNames from 'classnames'
-import { gsap } from 'gsap'
+import { useFacts } from './useFacts'
 import styles from './Facts.module.scss'
 
 const facts = [
@@ -35,66 +35,11 @@ const facts = [
 ]
 
 export const Facts: FC = () => {
-    const factsRef = useRef<HTMLDivElement>(null)
-
-    useEffect(() => {
-        const animateCircle = (circle: SVGCircleElement, factValue: number, endValue: number, index: number) => {
-            const radius = circle.r.baseVal.value
-            const circumference = 2 * Math.PI * radius
-
-            circle.style.strokeDasharray = `${circumference}`
-            circle.style.strokeDashoffset = `${circumference}`
-
-            gsap.to(circle, {
-                strokeDashoffset: circumference - (circumference * factValue) / endValue,
-                duration: 2.5,
-                ease: 'linear'
-            })
-
-            gsap.to(`.fact_number_${index}`, {
-                innerText: '0',
-                duration: 0.1,
-                onComplete: () => {
-                    gsap.to(`.fact_number_${index}`, {
-                        innerText: factValue + (facts[index].number.includes('%') ? '%' : ''),
-                        duration: 2.5,
-                        roundProps: 'innerText',
-                        ease: 'linear',
-                        snap: { innerText: 1 }
-                    })
-                }
-            })
-        }
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        const index = entry.target.getAttribute('data-index')
-                        if (index !== null) {
-                            const fact = facts[parseInt(index)]
-                            const circle = entry.target.querySelector(`.circle_${index}`) as SVGCircleElement
-                            if (circle) {
-                                animateCircle(circle, fact.value, fact.endValue, parseInt(index))
-                            }
-                        }
-                    }
-                })
-            },
-            { threshold: 0.5 }
-        )
-
-        const factsElements = factsRef.current?.querySelectorAll('.fact') || []
-        factsElements.forEach((fact) => observer.observe(fact))
-
-        return () => {
-            factsElements.forEach((fact) => observer.unobserve(fact))
-        }
-    }, [])
+    const factsRef = useFacts({ facts })
 
     return (
         <div className={styles.main}>
-            <h3 className={styles.title}>Some facts and figures</h3>
+            <h3 className={styles.title}>Einige Fakten über uns</h3>
             <div className={styles.facts} ref={factsRef}>
                 {facts.map((fact, index) => (
                     <div className={classNames(styles.fact, 'fact')} key={fact.text} data-index={index}>

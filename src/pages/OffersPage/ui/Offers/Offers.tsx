@@ -18,10 +18,10 @@ export const Offers: FC = () => {
                     ) : null}
                     <img src={Img} className={styles.offers_item_img} alt='Offer 1 image' />
                     <div className={styles.offers_item_info}>
-                        <h2 className={styles.offers_item_info_title}>Lorem ipsum</h2>
+                        <h2 className={styles.offers_item_info_title}>Beratung und Planung</h2>
                         <p className={styles.offers_item_info_text}>
-                            Sapien, feugiat faucibus orci arcu, vulputate. Tristique varius consectetur vulputate arcu, scelerisque nisi, nibh. Enim semper id sodales ultricies sed ut ut augue. Mattis habitant venenatis, gravida posuere massa ac
-                            interdum. Eget aliquam dignissim ut vestibulum.
+                            Unsere Experten stehen Ihnen von Anfang an zur Seite. Wir bieten eine umfassende Beratung und individuelle Planung, um die besten Lösungen für Ihre spezifischen Bedürfnisse zu entwickeln. Dabei berücksichtigen wir sowohl
+                            technische Anforderungen als auch ästhetische Aspekte.
                         </p>
                         {isMobile ? null : (
                             <Button onClick={() => {}} typeButton='transparentBg' width='medium'>
@@ -38,10 +38,10 @@ export const Offers: FC = () => {
                     ) : null}
                     <img src={Img} className={styles.offers_item_img} alt='Offer 2 image' />
                     <div className={styles.offers_item_info}>
-                        <h2 className={styles.offers_item_info_title}>Lorem ipsum</h2>
+                        <h2 className={styles.offers_item_info_title}>Professionelle Installation</h2>
                         <p className={styles.offers_item_info_text}>
-                            Sapien, feugiat faucibus orci arcu, vulputate. Tristique varius consectetur vulputate arcu, scelerisque nisi, nibh. Enim semper id sodales ultricies sed ut ut augue. Mattis habitant venenatis, gravida posuere massa ac
-                            interdum. Eget aliquam dignissim ut vestibulum.{' '}
+                            Unsere qualifizierten Techniker sorgen für eine fachgerechte und effiziente Installation Ihrer Solaranlage. Wir verwenden nur hochwertige Materialien und modernste Technik, um eine maximale Energieausbeute zu
+                            gewährleisten.
                         </p>
                         {isMobile ? null : (
                             <Button onClick={() => {}} typeButton='transparentBg' width='medium'>
@@ -58,10 +58,10 @@ export const Offers: FC = () => {
                     ) : null}
                     <img src={Img} className={styles.offers_item_img} alt='Offer 3 image' />
                     <div className={styles.offers_item_info}>
-                        <h2 className={styles.offers_item_info_title}>Lorem ipsum</h2>
+                        <h2 className={styles.offers_item_info_title}>Wartung und Support</h2>
                         <p className={styles.offers_item_info_text}>
-                            Sapien, feugiat faucibus orci arcu, vulputate. Tristique varius consectetur vulputate arcu, scelerisque nisi, nibh. Enim semper id sodales ultricies sed ut ut augue. Mattis habitant venenatis, gravida posuere massa ac
-                            interdum. Eget aliquam dignissim ut vestibulum.{' '}
+                            Ihre Bedürfnisse können sich im Laufe der Zeit ändern, und wir sind hier, um Sie dabei zu unterstützen. Ob Sie Ihre bestehende Solaranlage erweitern oder auf den neuesten Stand der Technik bringen möchten, wir bieten
+                            maßgeschneiderte Lösungen, die sich Ihren Anforderungen anpassen. Unsere Experten beraten Sie gerne und entwickeln individuelle Erweiterungskonzepte.
                         </p>
                         {isMobile ? null : (
                             <Button onClick={() => {}} typeButton='transparentBg' width='medium'>

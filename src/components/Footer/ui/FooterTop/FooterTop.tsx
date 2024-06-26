@@ -46,7 +46,7 @@ export const FooterTop: FC = () => {
                 <NetworksLinks />
             </div>
             <p className={styles.footer_top_description}>
-                Lorem ipsum dolor sit amet consectetur. Tortor pulvinar ut orci non leo neque interdum ut. Pellentesque ipsum quis mi enim tempus aliquam pellentesque luctus. Vel magna augue tempor leo leo morbi.
+                Durch das Ausfüllen des Kontaktformulars stimmen Sie der Verarbeitung Ihrer personenbezogenen Daten zu. Ihre Daten werden vertraulich behandelt und nur für die Bearbeitung Ihrer Anfrage verwendet.
             </p>
         </div>
     )

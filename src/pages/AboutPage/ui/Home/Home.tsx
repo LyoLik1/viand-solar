@@ -6,7 +6,7 @@ export const Home: FC = () => {
         <section className={styles.main} id='home'>
             <div className={styles.main_wrapper}>
                 <h1 className={styles.main_title}>Über uns</h1>
-                <p className={styles.main_text}>Lorem ipsum dolor sit amet consectetur. Viverra vel sed in vitae enim blandit molestie. Lorem in neque faucibus eu adipiscing id a. Ac id lobortis pellentesque sit.</p>
+                <p className={styles.main_text}>Unsere Firma bietet seit August 2021 professionelle Dienstleistungen im Bereich der Installation von Solaranlagen an und garantiert unseren Kunden einen hochwertigen und zuverlässigen Service.</p>
             </div>
         </section>
     )
