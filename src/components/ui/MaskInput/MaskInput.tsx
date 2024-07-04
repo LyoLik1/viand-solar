@@ -26,7 +26,7 @@ export const MaskInput: FC<InputOutlinedProps> = ({ label, onInput, error }) => 
     }
 
     return (
-        <FormControl fullWidth error={!!error}>
+        <FormControl fullWidth sx={{ height: '56px' }} error={!!error}>
             <PhoneInput
                 country={isFocused ? 'de' : ''}
                 placeholder={label}
@@ -38,6 +38,7 @@ export const MaskInput: FC<InputOutlinedProps> = ({ label, onInput, error }) => 
                     required: true,
                     className: classNames(styles.phoneInput, !isFocused && styles.phoneInput_unfocused, error && styles.error)
                 }}
+                containerClass={styles.container}
                 dropdownClass={classNames(styles.dropdown)}
                 buttonClass={classNames(isFocused || value.length > 0 ? '' : styles.btn, error && styles.error)}
             />

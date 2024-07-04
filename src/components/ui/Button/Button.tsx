@@ -9,12 +9,14 @@ interface ButtonProps {
     onClick: () => void
     // width?: string | number
     width?: 'smallest' | 'small' | 'medium' | 'half' | 'large' | 'full'
+    height?: 'medium'
+
     typeButton?: 'yellow' | 'transparent' | 'transparentBg'
     disable?: boolean
     className?: string
 }
 
-export const Button: FC<ButtonProps> = ({ type = 'button', width = 'medium', className, children, onClick, typeButton = 'yellow', disable = false }) => {
+export const Button: FC<ButtonProps> = ({ type = 'button', width = 'medium', height, className, children, onClick, typeButton = 'yellow', disable = false }) => {
     const buttonStyles = {
         yellow: styles.yellow,
         transparent: styles.transparent,
@@ -28,11 +30,14 @@ export const Button: FC<ButtonProps> = ({ type = 'button', width = 'medium', cla
         large: styles.large,
         full: styles.full
     }
+    const buttonHeight = {
+        medium: styles.mediumHeight
+    }
     return (
         <ButtonMui
             type={type}
             onClick={onClick}
-            className={classNames(buttonStyles[typeButton], buttonWidth[width], className)}
+            className={classNames(buttonStyles[typeButton], buttonWidth[width], height && buttonHeight[height], className)}
             sx={{
                 padding: width < '50px' ? '10px 0' : '10px'
             }}

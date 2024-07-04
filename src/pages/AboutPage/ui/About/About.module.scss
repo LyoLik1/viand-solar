@@ -1,102 +1,126 @@
 @import 'src/styles/variables';
 
 .about {
-    width: 70%;
-    margin: 0 auto;
-    height: 70dvh;
     overflow: hidden;
-    @media (max-width: 1400px) {
-        height: fit-content;
-        margin-bottom: 50px;
-    }
-    @media (max-width: 1024px) {
-        height: fit-content;
-    }
+    width: 70%;
+    height: 70dvh;
+    margin: 0 auto;
+
     &_wrapper {
-        display: flex;
         position: relative;
+        display: flex;
+
         @media (max-width: 1024px) {
-            align-items: center;
-            justify-content: center;
             flex-direction: column;
             gap: 20px;
+            align-items: center;
+            justify-content: center;
         }
-    }
-    @media (max-width: 1400px) {
-        width: 95%;
     }
 
     &_text {
         position: absolute;
-        padding: 50px;
-        background-color: $blue;
+        left: 35%;
+
         display: flex;
         gap: 30px;
+
         width: 60%;
-        left: 35%;
         min-height: 50%;
+        padding: 50px;
+
+        background-color: $blue;
+
         @media (max-width: 1400px) {
             left: 50%;
             padding: 50px 20px;
         }
+
         @media (max-width: 1024px) {
             position: relative;
             left: 0%;
-            padding: 50px 20px;
             width: 80%;
+            padding: 50px 20px;
         }
+
         @media (max-width: 767px) {
             width: 90%;
         }
     }
+
     &_img {
-        width: 40%;
-        max-height: 650px;
-        height: 100%;
-        object-fit: contain;
         position: relative;
+
+        width: 40%;
+        height: 100%;
+        max-height: 650px;
+
+        object-fit: contain;
+
         @media (max-width: 1400px) {
             width: 70%;
         }
+
         @media (max-width: 1024px) {
             width: 80%;
         }
+
         @media (max-width: 767px) {
             width: 90%;
         }
+    }
+
+    @media (max-width: 1400px) {
+        height: fit-content;
+        margin-bottom: 50px;
+    }
+
+    @media (max-width: 1024px) {
+        height: fit-content;
+    }
+
+    @media (max-width: 1400px) {
+        width: 95%;
     }
 }
 
 .description {
     display: flex;
+    flex-direction: column;
     align-items: start;
     justify-content: start;
-    flex-direction: column;
+
     width: 80%;
+
     &_text {
         margin-bottom: 40px;
+
         font-size: 20px;
         font-weight: 700;
         line-height: 30px;
-        text-align: left;
         color: $white;
+        text-align: left;
+
         @media (max-width: 1400px) {
             width: 90%;
         }
     }
+
     &_author {
         margin-bottom: 20px;
+
         font-size: 16px;
         font-weight: 700;
         line-height: 25.6px;
-        text-align: left;
         color: $white;
+        text-align: left;
     }
+
     &_position {
         font-size: 14px;
         font-weight: 400;
         line-height: 21px;
-        text-align: left;
         color: $yellow;
+        text-align: left;
     }
 }

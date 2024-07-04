@@ -61,7 +61,7 @@
 .name {
     display: flex;
     flex-wrap: nowrap;
-    gap: 5px;
+    gap: 20px;
     justify-content: space-between;
 
     width: 100%;
@@ -71,6 +71,7 @@
     &_first {
         display: flex;
         flex-direction: column;
+        width: 100%;
 
         &_label {
             margin-bottom: 5px;
@@ -93,19 +94,56 @@
 .info {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     width: 100%;
 
+    &_contact {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 20px;
+        justify-content: space-between;
+
+        @media (max-width: 1024px) {
+            flex-direction: column;
+        }
+    }
+
     &_phone,
-    &_email,
-    &_message {
+    &_email {
         display: flex;
         flex-direction: column;
         gap: 5px;
         width: 100%;
+
+        @media (max-width: 1024px) {
+            flex-direction: column;
+        }
     }
 
     &_message {
+        width: 100%;
         margin-bottom: 10px;
+    }
+}
+
+.additional {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+    }
+}
+
+.confirm {
+    display: flex;
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        gap: 20px;
     }
 }

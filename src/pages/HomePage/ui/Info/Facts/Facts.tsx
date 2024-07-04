@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import classNames from 'classnames'
-import { useFacts } from './useFacts'
 import styles from './Facts.module.scss'
+import { useFacts } from './useFacts'
 
 const facts = [
     {

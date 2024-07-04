@@ -53,7 +53,7 @@ export const Header: FC = () => {
                     </nav>
                     <div className={styles.contacts}>
                         {' '}
-                        {/* Update phone number */}
+                        {/* TODO Update phone number */}
                         <a target='_blank' href='tel:+123456789' className={styles.phone} rel='noreferrer'>
                             <img src={PhoneImg} alt='Phone image' />
                             <div className={styles.phone_info}>
@@ -63,7 +63,7 @@ export const Header: FC = () => {
                         </a>
                         <a target='_blank' href='mailto:example@example.com' className={styles.email} rel='noreferrer'>
                             {' '}
-                            {/* Update email */}
+                            {/* TODO Update email */}
                             <img src={ChatImg} alt='Email img' />
                             <div className={styles.email_info}>
                                 <span className={styles.email_info_text}>E-Mail</span>

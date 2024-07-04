@@ -44,6 +44,14 @@
     }
 }
 
+.container {
+    height: 100%;
+
+    > input {
+        height: 100%;
+    }
+}
+
 .dropdown {
     margin-top: 0.5px;
     font-family: 'Quattrocento Sans' !important;

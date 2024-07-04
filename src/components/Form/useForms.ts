@@ -26,6 +26,7 @@ const schema = yup.object().shape({
         .string()
         .required('This field is required')
         .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 'Invalid email address'),
+    topic: yup.string().required('This field is required'),
     message: yup.string().required('This field is required'),
     checkbox: yup.boolean().oneOf([true], 'You must accept the terms and conditions')
 })

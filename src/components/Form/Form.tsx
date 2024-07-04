@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import { Controller } from 'react-hook-form'
 import { Button } from '../ui/Button/Button'
 import { Checkbox } from '../ui/Checkbox/Checkbox'
+import { GroupRadio } from '../ui/GroupRadio/GroupRadio'
 import { InputOutlined } from '../ui/Input/InputOutlined'
 import { MaskInput } from '../ui/MaskInput/MaskInput'
 import { TextField } from '../ui/TextField/TextField'
@@ -42,38 +43,114 @@ const Form: FC<FormProps> = ({ headline = true }) => {
                             />
                         </div>
                     </div>
-                    <div className={styles.info}>
-                        <div className={styles.info_phone}>
-                            <label className={classNames(styles.info_phone_label, styles.form_label)}>Telefon</label>
-                            <Controller name={'phoneNumber'} control={control} rules={{ required: true }} render={() => <MaskInput label={'Ihre Telefonnummer'} onInput={(value) => setValue('phoneNumber', value)} error={errors['phoneNumber']} />} />
-                        </div>
-                        <div className={styles.info_email}>
-                            <label className={classNames(styles.info_email_label, styles.form_label)}>E-Mail</label>
-                            <Controller name={'email'} control={control} rules={{ required: true }} render={() => <InputOutlined label={'Ihre E-Mail'} type={'email'} onInput={(value) => setValue('email', value)} error={errors['email']} />} />
-                        </div>
-                        <div className={styles.info_message}>
-                            <label className={classNames(styles.info_message_label, styles.form_label)}>Nachricht</label>
-                            <Controller name={'message'} control={control} rules={{ required: true }} render={() => <TextField label={'Ihre Nachricht'} type={'text'} onInput={(value) => setValue('message', value)} error={errors['message']} />} />
-                        </div>
-                    </div>
-                    <Controller
-                        name={'checkbox'}
-                        control={control}
-                        rules={{ required: true }}
-                        render={({ field }) => (
-                            <Checkbox
-                                checked={checked}
-                                onChange={(e) => {
-                                    field.onChange(e)
-                                    handleCheckboxChange(e)
-                                }}
-                                error={errors['checkbox']}
+                    {!headline ? (
+                        <>
+                            <div className={styles.info}>
+                                <div className={styles.info_contact}>
+                                    <div className={styles.info_phone}>
+                                        <label className={classNames(styles.info_phone_label, styles.form_label)}>Telefon</label>
+                                        <Controller
+                                            name={'phoneNumber'}
+                                            control={control}
+                                            rules={{ required: true }}
+                                            render={() => <MaskInput label={'Ihre Telefonnummer'} onInput={(value) => setValue('phoneNumber', value)} error={errors['phoneNumber']} />}
+                                        />
+                                    </div>
+                                    <div className={styles.info_email}>
+                                        <label className={classNames(styles.info_email_label, styles.form_label)}>E-Mail</label>
+                                        <Controller
+                                            name={'email'}
+                                            control={control}
+                                            rules={{ required: true }}
+                                            render={() => <InputOutlined label={'Ihre E-Mail'} type={'email'} onInput={(value) => setValue('email', value)} error={errors['email']} />}
+                                        />
+                                    </div>
+                                </div>
+                                <div className={styles.additional}>
+                                    <div className={styles.additional_topic}>
+                                        <label className={classNames(styles.additional_topic_label, styles.form_label)}>Betreff</label>
+                                        <Controller name={'topic'} control={control} rules={{ required: true }} render={() => <InputOutlined label={'Betreff'} onInput={(value) => setValue('topic', value)} error={errors['topic']} type={'text'} />} />
+                                    </div>
+                                    <GroupRadio control={control} name='preferredContactMethod' />
+                                </div>
+                                <div className={styles.info_message}>
+                                    <label className={classNames(styles.info_message_label, styles.form_label)}>Nachricht</label>
+                                    <Controller
+                                        name={'message'}
+                                        control={control}
+                                        rules={{ required: true }}
+                                        render={() => <TextField label={'Ihre Nachricht'} type={'text'} onInput={(value) => setValue('message', value)} error={errors['message']} />}
+                                    />
+                                </div>
+                            </div>
+
+                            <div className={styles.confirm}>
+                                <Controller
+                                    name={'checkbox'}
+                                    control={control}
+                                    rules={{ required: true }}
+                                    render={({ field }) => (
+                                        <Checkbox
+                                            checked={checked}
+                                            onChange={(e) => {
+                                                field.onChange(e)
+                                                handleCheckboxChange(e)
+                                            }}
+                                            error={errors['checkbox']}
+                                        />
+                                    )}
+                                />
+                                <Button onClick={() => {}} type='submit' height='medium'>
+                                    ABSENDEN
+                                </Button>
+                            </div>
+                        </>
+                    ) : (
+                        <>
+                            <div className={styles.info}>
+                                <div className={styles.info_phone}>
+                                    <label className={classNames(styles.info_phone_label, styles.form_label)}>Telefon</label>
+                                    <Controller
+                                        name={'phoneNumber'}
+                                        control={control}
+                                        rules={{ required: true }}
+                                        render={() => <MaskInput label={'Ihre Telefonnummer'} onInput={(value) => setValue('phoneNumber', value)} error={errors['phoneNumber']} />}
+                                    />
+                                </div>
+                                <div className={styles.info_email}>
+                                    <label className={classNames(styles.info_email_label, styles.form_label)}>E-Mail</label>
+                                    <Controller name={'email'} control={control} rules={{ required: true }} render={() => <InputOutlined label={'Ihre E-Mail'} type={'email'} onInput={(value) => setValue('email', value)} error={errors['email']} />} />
+                                </div>
+                                <div className={styles.info_message}>
+                                    <label className={classNames(styles.info_message_label, styles.form_label)}>Nachricht</label>
+                                    <Controller
+                                        name={'message'}
+                                        control={control}
+                                        rules={{ required: true }}
+                                        render={() => <TextField label={'Ihre Nachricht'} type={'text'} onInput={(value) => setValue('message', value)} error={errors['message']} />}
+                                    />
+                                </div>
+                            </div>
+                            <Controller
+                                name={'checkbox'}
+                                control={control}
+                                rules={{ required: true }}
+                                render={({ field }) => (
+                                    <Checkbox
+                                        checked={checked}
+                                        onChange={(e) => {
+                                            field.onChange(e)
+                                            handleCheckboxChange(e)
+                                        }}
+                                        error={errors['checkbox']}
+                                    />
+                                )}
                             />
-                        )}
-                    />
-                    <Button onClick={() => {}} type='submit'>
-                        ABSENDEN
-                    </Button>
+                            <Button onClick={() => {}} type='submit'>
+                                ABSENDEN
+                            </Button>
+                        </>
+                    )}
                 </div>
             </form>
             {isModalOpen && <Modal isModalOpen={isModalOpen} toggleModal={toggleModalHandler} />}

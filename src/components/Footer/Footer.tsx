@@ -1,9 +1,9 @@
 import { FC, useState } from 'react'
 import { Button } from '../ui/Button/Button'
 import { Arrow } from '../ui/icons/Arrow'
+import styles from './Footer.module.scss'
 import { FooterBottom } from './ui/FooterBottom/FooterBottom'
 import { FooterTop } from './ui/FooterTop/FooterTop'
-import styles from './Footer.module.scss'
 
 export const Footer: FC = () => {
     const [isHover, setIsHover] = useState(false)
