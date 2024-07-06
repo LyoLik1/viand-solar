@@ -36,19 +36,19 @@ export const HomeOffers: FC = () => {
             image: <Planing color={hoveredIndex === 0 ? '#FFFFFF' : '#FCD400'} />,
             title: 'Beratung und Planung',
             bgImage: Card1BgImage,
-            link: `${ROUTES.OFFERS}#offer-1`
+            link: `${ROUTES.OFFERS}#service-1`
         },
         {
             image: <Installation color={hoveredIndex === 1 ? '#FFFFFF' : '#FCD400'} />,
             title: 'Installation',
             bgImage: Card1BgImage,
-            link: `${ROUTES.OFFERS}#offer-2`
+            link: `${ROUTES.OFFERS}#service-2`
         },
         {
             image: <Service color={hoveredIndex === 2 ? '#FFFFFF' : '#FCD400'} />,
             title: 'Wartung und Support',
             bgImage: Card1BgImage,
-            link: `${ROUTES.OFFERS}#offer-3`
+            link: `${ROUTES.OFFERS}#service-3`
         }
     ]
 

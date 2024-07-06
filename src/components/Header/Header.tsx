@@ -54,20 +54,20 @@ export const Header: FC = () => {
                     <div className={styles.contacts}>
                         {' '}
                         {/* TODO Update phone number */}
-                        <a target='_blank' href='tel:+123456789' className={styles.phone} rel='noreferrer'>
+                        <a target='_blank' href='tel:+491729953039' className={styles.phone} rel='noreferrer'>
                             <img src={PhoneImg} alt='Phone image' />
                             <div className={styles.phone_info}>
                                 <span className={styles.phone_info_text}>Telefon</span>
-                                <span className={styles.phone_info_link}>(405) 555-0128</span>
+                                <span className={styles.phone_info_link}>+49 1729 953039</span>
                             </div>
                         </a>
-                        <a target='_blank' href='mailto:example@example.com' className={styles.email} rel='noreferrer'>
+                        <a target='_blank' href='mailto:info@viand-solar.de' className={styles.email} rel='noreferrer'>
                             {' '}
                             {/* TODO Update email */}
                             <img src={ChatImg} alt='Email img' />
                             <div className={styles.email_info}>
                                 <span className={styles.email_info_text}>E-Mail</span>
-                                <span className={styles.email_info_link}>(405) 555-0128</span>
+                                <span className={styles.email_info_link}>info@viand-solar.de</span>
                             </div>
                         </a>
                     </div>

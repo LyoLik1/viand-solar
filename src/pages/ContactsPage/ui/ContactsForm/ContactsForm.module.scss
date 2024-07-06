@@ -13,6 +13,7 @@
     font-size: 46px;
     font-weight: 700;
     line-height: 59.8px;
+    text-align: center;
 }
 
 .text {
@@ -50,8 +51,7 @@
     }
 
     &_form {
-        width: 40%;
-        max-width: 550px;
+        width: 50%;
         height: 100%;
 
         @media (max-width: 767px) {

@@ -5,16 +5,16 @@ import styles from './FooterBottom.module.scss'
 
 const offersLink = [
     {
-        name: 'Lorem ipsum1',
-        link: `${ROUTES.OFFERS}#offer-1`
+        name: 'Beratung und Planung',
+        link: `${ROUTES.OFFERS}#service-1`
     },
     {
-        name: 'Lorem ipsum2',
-        link: `${ROUTES.OFFERS}#offer-2`
+        name: 'Professionelle Installation',
+        link: `${ROUTES.OFFERS}#service-2`
     },
     {
-        name: 'Lorem ipsum3',
-        link: `${ROUTES.OFFERS}#offer-3`
+        name: 'Wartung und Support',
+        link: `${ROUTES.OFFERS}#service-3`
     }
 ]
 
@@ -36,7 +36,7 @@ const Links: FC = () => (
             </ul>
         </div>
         <div className={styles.offers}>
-            <p className={styles.title}>ANGEBOTE</p>
+            <p className={styles.title}>leistungen</p>
             <ul className={styles.offers_links}>
                 {offersLink.map((offer) => (
                     <li key={offer.name}>
@@ -54,9 +54,9 @@ const ContactInfo: FC = () => (
     <div className={styles.contacts}>
         <p className={styles.title}>HAUPTSITZ</p>
         <ul className={styles.contacts_info}>
-            <li className={styles.contacts_info_text}>Adresse: Lorem ipsum dolor sit.</li>
-            <li className={styles.contacts_info_text}>Telefon: Lorem ipsum dolor sit.</li>
-            <li className={styles.contacts_info_text}>E-Mail: Lorem ipsum dolor sit.</li>
+            <li className={styles.contacts_info_text}>Adresse: Andersenweg 2 49716 Meppen</li>
+            <li className={styles.contacts_info_text}>Telefon: +49 1729 953039</li>
+            <li className={styles.contacts_info_text}>E-Mail: info@viand-solar.de</li>
         </ul>
     </div>
 )

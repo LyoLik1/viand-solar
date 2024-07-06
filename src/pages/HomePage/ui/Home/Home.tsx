@@ -19,7 +19,7 @@ export const Home: FC = () => {
                 </p>
                 <div className={styles.info_buttons}>
                     <Button onClick={() => navigator(ROUTES.OFFERS)} width={isTablet || isMobile ? 'full' : 'half'} typeButton='transparent'>
-                        zu unseren angeboten
+                        zu unseren leistungen
                     </Button>
                     <Button onClick={() => navigator(ROUTES.ABOUT)} width={isTablet || isMobile ? 'full' : 'half'}>
                         Mehr über uns erfahren

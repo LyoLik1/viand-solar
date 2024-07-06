@@ -6,28 +6,21 @@ import { useFacts } from './useFacts'
 const facts = [
     {
         number: '98%',
-        text: 'Lorem ipsum1',
+        text: 'Zufriedene Kunde',
         value: 98,
         endValue: 105,
         color: '#F89828'
     },
     {
-        number: '20',
-        text: 'Lorem ipsum2',
-        value: 20,
-        endValue: 25,
-        color: '#F52F6E'
-    },
-    {
-        number: '9452',
-        text: 'Lorem ipsum3',
-        value: 9452,
-        endValue: 11700,
+        number: '5520',
+        text: 'Stunden bei der Arbeit',
+        value: 5520,
+        endValue: 5520,
         color: '#5A87FC'
     },
     {
         number: '100%',
-        text: 'Lorem ipsum4',
+        text: 'Erfolgreich abgeschlossene Projekte',
         value: 100,
         endValue: 100,
         color: '#03CEA4'

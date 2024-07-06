@@ -134,6 +134,15 @@
 
     margin-bottom: 10px;
 
+    &_topic {
+        width: 100%;
+    }
+    &_contacts {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
     @media (max-width: 1024px) {
         flex-direction: column;
     }
@@ -145,5 +154,12 @@
     @media (max-width: 1024px) {
         flex-direction: column;
         gap: 20px;
+    }
+}
+
+.button {
+    margin-top: 15px !important;
+    &_contact {
+        margin: 0 auto !important;
     }
 }

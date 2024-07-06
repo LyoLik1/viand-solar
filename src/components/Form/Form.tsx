@@ -71,7 +71,9 @@ const Form: FC<FormProps> = ({ headline = true }) => {
                                         <label className={classNames(styles.additional_topic_label, styles.form_label)}>Betreff</label>
                                         <Controller name={'topic'} control={control} rules={{ required: true }} render={() => <InputOutlined label={'Betreff'} onInput={(value) => setValue('topic', value)} error={errors['topic']} type={'text'} />} />
                                     </div>
-                                    <GroupRadio control={control} name='preferredContactMethod' />
+                                    <div className={styles.additional_contacts}>
+                                        <GroupRadio control={control} name='preferredContactMethod' />
+                                    </div>
                                 </div>
                                 <div className={styles.info_message}>
                                     <label className={classNames(styles.info_message_label, styles.form_label)}>Nachricht</label>
@@ -100,7 +102,7 @@ const Form: FC<FormProps> = ({ headline = true }) => {
                                         />
                                     )}
                                 />
-                                <Button onClick={() => {}} type='submit' height='medium'>
+                                <Button onClick={() => {}} className={styles.button_contact} type='submit' height='medium'>
                                     ABSENDEN
                                 </Button>
                             </div>
@@ -146,7 +148,7 @@ const Form: FC<FormProps> = ({ headline = true }) => {
                                     />
                                 )}
                             />
-                            <Button onClick={() => {}} type='submit'>
+                            <Button onClick={() => {}} className={styles.button} type='submit'>
                                 ABSENDEN
                             </Button>
                         </>
