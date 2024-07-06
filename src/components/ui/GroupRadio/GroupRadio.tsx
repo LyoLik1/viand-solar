@@ -6,10 +6,14 @@ import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
 import { Control, Controller } from 'react-hook-form'
 import styles from './GroupRadio.module.scss'
+interface FormData {
+    topic: string
+    preferredContactMethod: 'female' | 'male' | 'other'
+}
 
 interface GroupRadioProps {
-    control: Control<any>
-    name: string
+    control: Control<FormData>
+    name: keyof FormData
 }
 
 export const GroupRadio: FC<GroupRadioProps> = ({ control, name }) => {
