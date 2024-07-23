@@ -10,9 +10,8 @@ interface FormData {
     topic: string
     preferredContactMethod: 'female' | 'male' | 'other'
 }
-
 interface GroupRadioProps {
-    control: Control<FormData>
+    control?: Control<FormData>
     name: keyof FormData
 }
 

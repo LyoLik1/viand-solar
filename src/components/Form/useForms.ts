@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from 'react-hook-form'
-import * as yup from 'yup'
+import { useShema } from './useShema'
 
 interface FormData {
     firstName: string
@@ -12,26 +12,8 @@ interface FormData {
     checkbox?: boolean
 }
 
-const schema = yup.object().shape({
-    firstName: yup
-        .string()
-        .required('This field is required')
-        .matches(/^[a-zA-Z\s]*$/, 'Invalid name'),
-    lastName: yup
-        .string()
-        .required('This field is required')
-        .matches(/^[a-zA-Z\s]*$/, 'Invalid name'),
-    phoneNumber: yup.string().required('This field is required'),
-    email: yup
-        .string()
-        .required('This field is required')
-        .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 'Invalid email address'),
-    topic: yup.string().required('This field is required'),
-    message: yup.string().required('This field is required'),
-    checkbox: yup.boolean().oneOf([true], 'You must accept the terms and conditions')
-})
-
-export const useForms = () => {
+export const useForms = (isSimpleForm: boolean) => {
+    const schema = useShema(isSimpleForm)
     const {
         setValue,
         handleSubmit,

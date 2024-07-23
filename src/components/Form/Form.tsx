@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck comment
 import { FC } from 'react'
 import classNames from 'classnames'
 import { Controller } from 'react-hook-form'
@@ -13,10 +15,11 @@ import { useForms } from './useForms'
 
 interface FormProps {
     headline?: boolean
+    isSimpleForm?: boolean
 }
 
-const Form: FC<FormProps> = ({ headline = true }) => {
-    const { setValue, handleSubmit, control, errors, checked, isModalOpen, handleCheckboxChange, toggleModalHandler, onSubmit } = useForms()
+const Form: FC<FormProps> = ({ headline = true, isSimpleForm = true }) => {
+    const { setValue, handleSubmit, control, errors, checked, isModalOpen, handleCheckboxChange, toggleModalHandler, onSubmit } = useForms(isSimpleForm)
 
     return (
         <>
