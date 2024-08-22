@@ -1,6 +1,9 @@
 import { createClient } from 'smtpexpress'
 
+const API_URL = import.meta.env.VITE_SMTP_PROJECT_ID
+const API_URL2 = import.meta.env.VITE_SMTP_PROJECT_SECRET
+
 export const smtpexpressClient = createClient({
-    projectId: 'sm0pid-wuMT1R1QpisKafqBR-NSQVRsK',
-    projectSecret: '137eeb748a4dc4c2167c6f9abd0722d3d5aebe6613b274663f'
+    projectId: API_URL,
+    projectSecret: API_URL2
 })

@@ -18,6 +18,7 @@ interface FormData {
 
 export const useForms = (isSimpleForm: boolean) => {
     const schema = useShema(isSimpleForm)
+
     const {
         setValue,
         handleSubmit,
