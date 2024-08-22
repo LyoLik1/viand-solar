@@ -6,7 +6,6 @@ import { About } from './ui/About/About'
 import { Cores } from './ui/Cores/Cores'
 import { Home } from './ui/Home/Home'
 import { Map } from './ui/Map/Map'
-import { Team } from './ui/Team/Team'
 
 export const AboutPage: FC = () => {
     return (
@@ -15,7 +14,6 @@ export const AboutPage: FC = () => {
             <Cores />
             <About />
             <CoresValue />
-            <Team />
             <Map />
             <FormBg />
         </main>

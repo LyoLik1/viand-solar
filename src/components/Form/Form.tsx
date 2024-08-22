@@ -75,7 +75,43 @@ const Form: FC<FormProps> = ({ headline = true, isSimpleForm = true }) => {
                                         <Controller name={'topic'} control={control} rules={{ required: true }} render={() => <InputOutlined label={'Betreff'} onInput={(value) => setValue('topic', value)} error={errors['topic']} type={'text'} />} />
                                     </div>
                                     <div className={styles.additional_contacts}>
-                                        <GroupRadio control={control} name='preferredContactMethod' />
+                                        <Controller
+                                            name='preferredContactMethod'
+                                            control={control}
+                                            rules={{ required: 'Preferred contact method is required' }}
+                                            render={({ field }) => (
+                                                <GroupRadio
+                                                    value={field.value}
+                                                    onChange={field.onChange}
+                                                    name='preferredContactMethod'
+                                                    label='Preferred contact method'
+                                                    options={[
+                                                        { value: 'Telefon', label: 'Telefon' },
+                                                        { value: 'E-mail', label: 'E-mail' }
+                                                    ]}
+                                                    error={errors.preferredContactMethod?.message}
+                                                />
+                                            )}
+                                        />
+                                        <Controller
+                                            name='sex'
+                                            control={control}
+                                            rules={{ required: 'Sex is required' }}
+                                            render={({ field }) => (
+                                                <GroupRadio
+                                                    value={field.value}
+                                                    onChange={field.onChange}
+                                                    name='sex'
+                                                    label='Anrede'
+                                                    options={[
+                                                        { value: 'Herr', label: 'Herr' },
+                                                        { value: 'Frau', label: 'Frau' },
+                                                        { value: 'Andere', label: 'Andere' }
+                                                    ]}
+                                                    error={errors.sex?.message}
+                                                />
+                                            )}
+                                        />
                                     </div>
                                 </div>
                                 <div className={styles.info_message}>
