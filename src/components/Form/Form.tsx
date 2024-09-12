@@ -78,13 +78,13 @@ const Form: FC<FormProps> = ({ headline = true, isSimpleForm = true }) => {
                                         <Controller
                                             name='preferredContactMethod'
                                             control={control}
-                                            rules={{ required: 'Preferred contact method is required' }}
+                                            rules={{ required: 'Bevorzugte Kontaktmethode ist erforderlich' }}
                                             render={({ field }) => (
                                                 <GroupRadio
                                                     value={field.value}
                                                     onChange={field.onChange}
                                                     name='preferredContactMethod'
-                                                    label='Preferred contact method'
+                                                    label='Bevorzugte Kontaktmethode'
                                                     options={[
                                                         { value: 'Telefon', label: 'Telefon' },
                                                         { value: 'E-mail', label: 'E-mail' }
@@ -96,7 +96,7 @@ const Form: FC<FormProps> = ({ headline = true, isSimpleForm = true }) => {
                                         <Controller
                                             name='sex'
                                             control={control}
-                                            rules={{ required: 'Sex is required' }}
+                                            rules={{ required: 'Sex ist erforderlich' }}
                                             render={({ field }) => (
                                                 <GroupRadio
                                                     value={field.value}
